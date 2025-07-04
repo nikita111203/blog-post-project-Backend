@@ -12,6 +12,10 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use(cors());
 app.use(express.json());
+
+app.get("/",(req,res)=>{
+    res.send("Blog Post Backend Working")
+})
 app.post("/posts", async (req, res) => {
     try {
         const { title, description, author } = req.body;
